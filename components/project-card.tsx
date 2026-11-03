@@ -1,4 +1,5 @@
 import type { Project } from "@/lib/projects";
+import Link from "next/link";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -21,6 +22,12 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         ))}
       </div>
+      <Link
+  href={`/projects/${project.slug}`}
+  className="mt-4 inline-block text-blue-600 hover:underline"
+>
+  View case study
+</Link>
 
       <div className="mt-4 flex gap-4">
         {project.githubUrl && (
